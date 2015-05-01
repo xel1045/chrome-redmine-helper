@@ -1,0 +1,36 @@
+{
+  "name": "chrome-redmine-helper",
+  "version": "0.0.1",
+  "description": "A small chrome extension to help manage Redmine issues.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "tabs",
+    "count"
+  ],
+  "author": "Alexandre D'Eschambeault <adeschambeault@exolnet.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "async": "~0.9.0",
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~1.0.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-jshint": "~0.11.0",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-crx": "git://github.com/oncletom/grunt-crx.git#v1.0.3",
+    "grunt-ng-annotate": "~0.4.0",
+    "jshint-stylish": "~1.0.1",
+    "load-grunt-tasks": "~3.1.0",
+    "lodash": "~3.4.0",
+    "moment": "~2.9.0",
+    "time-grunt": "~1.1.0"
+  }
+}

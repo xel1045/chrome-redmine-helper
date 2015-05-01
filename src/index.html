@@ -1,0 +1,105 @@
+<html ng-app="redmineApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Redmine Helper</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="js/components.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-controller="AppController">
+	<header class="navbar navbar-default" id="top" role="banner">
+		<div class="navbar-header">
+			<span class="navbar-brand" href="#">Redmine Helper</span>
+		</div>
+
+		<nav ng-if="isReady()">
+			<ul class="nav navbar-nav" role="tablist">
+				<li class="active"><a href="#new" role="tab" data-toggle="tab">New Issue</a></li>
+				<li><a href="#consolidate" role="tab" data-toggle="tab">Consolidate</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main class="main container-fluid" role="main">
+		<div class="loading" ng-if="isLoading"></div>
+
+		<div ng-if="!isConfigured" ng-controller="ConfigController">
+			<h2>Configuration</h2>
+
+			<div class="form-group" ng-class="{'has-error': hasError}">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
+					<input type="text" class="form-control" placeholder="Redmine URL" ng-model="redmineUrl">
+				</div>
+			</div>
+
+			<div class="form-group" ng-class="{'has-error': hasError}">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input type="text" class="form-control" placeholder="API Key" ng-model="apiKey">
+				</div>
+			</div>
+
+			<footer>
+				<button type="button" class="btn btn-default" ng-click="save()" ng-disabled="!canSave()">
+					<span ng-if="!isLoading">Let's Go!</span>
+					<span ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> Loading</span>
+				</button>
+			</footer>
+		</div>
+
+		<div class="tab-content" ng-if="isReady()">
+			<div role="tabpanel" class="tab-pane active" id="new">
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Bug <span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Bug</a></li>
+							</ul>
+						</div>
+						<input type="text" class="form-control" placeholder="Subject">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<textarea class="form-control" placeholder="Description"></textarea>
+				</div>
+
+				<footer>
+					<div class="actions">
+						<a href="#" class="btn btn-primary"><i class="fa fa-check"></i></a>
+					</div>
+				</footer>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="consolidate">
+				<h2>Bug #8757: Formation sur l'ajout de contenu</h2>
+				<p>Description</p>
+
+				<hr/>
+
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Estimated time">
+						<span class="input-group-addon">hours</span>
+					</div>
+				</div>
+
+				<footer>
+					<span class="text-muted pull-left">1/25</span>
+
+					<div class="actions">
+						<a href="#" class="btn btn-primary"><i class="fa fa-chevron-left"></i></a>
+						<a href="#" class="btn btn-primary"><i class="fa fa-chevron-right"></i></a>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

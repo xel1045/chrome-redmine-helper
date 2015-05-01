@@ -1,0 +1,24 @@
+{
+  "name": "chrome-redmine-helper",
+  "version": "0.0.1",
+  "authors": [
+    "Alexandre D'Eschambeault <adeschambeault@exolnet.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-route": "1.4.x",
+    "bootstrap": "~3.3.2",
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1",
+    "js-yaml": "~3.2",
+    "restangular": "1.4.x"
+  }
+}
